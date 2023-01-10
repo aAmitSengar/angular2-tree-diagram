@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   bottom: -10px;
-  background: #2c4c63;
+  background: blue;
   margin: 0 auto;
   display: none;
   z-index: 10;
@@ -48,7 +48,7 @@
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  border-radius: 2px;
+  border-radius: 50%;
 }
 
 .tree-element-main {
@@ -147,15 +147,15 @@
     @include tree-button;
     background-color: #a34851;
     position: absolute;
-    right: -10px;
-    top: -10px;
+    right: 14px;
+    top: 2px;
   }
   .add {
     @include tree-button;
     background-color: #256947;
     position: absolute;
-    right: -10px;
-    bottom: -10px;
+    right: 64px;
+    bottom: 24px;
     &:before {
       content: "";
       position: absolute;

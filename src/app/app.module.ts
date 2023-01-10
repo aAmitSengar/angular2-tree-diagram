@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TreeDiagramModule } from 'ng-tree-diagram';
+import { TreeDiagramModule } from '../../projects/ng-tree-diagram/src/ng-tree-diagram';
 
 @NgModule({
   declarations: [AppComponent],

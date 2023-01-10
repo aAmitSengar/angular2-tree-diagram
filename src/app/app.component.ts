@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
     public treeConfig = {
         nodeWidth: 150,
-        nodeHeight: 100
+        nodeHeight: 150
     };
 
     public tree: any;
