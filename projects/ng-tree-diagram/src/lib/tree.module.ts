@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { TreeComponent } from './tree.component';
 import { NodeComponent } from './node';
 import { NodesListService } from './services/nodes-list.service';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { NodesListService } from './services/nodes-list.service';
         NodeComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        MatIconModule,
     ],
     exports: [
         TreeComponent,

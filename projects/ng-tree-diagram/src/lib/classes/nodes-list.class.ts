@@ -6,7 +6,7 @@ export class TreeDiagramNodesList {
   public makerGuid: string;
   public draggingNodeGuid;
   private nodesList: Map<string, TreeDiagramNode>;
-  private nodeTemplate = {
+  private nodeTemplate  = {
     displayName: 'New node',
     children: [],
     guid: '',
@@ -163,10 +163,12 @@ export class TreeDiagramNodesList {
   }
 
   public newNode(parentId = null) {
+    const count=this.nodesList.size
     const nodeTemplate = Object.assign({}, this.nodeTemplate);
 
     nodeTemplate.guid = this.uuidv4();
     nodeTemplate.parentId = parentId;
+    nodeTemplate.displayName=`${nodeTemplate.displayName} ${count}`
     this.nodesList.set(
       nodeTemplate.guid,
       new TreeDiagramNode(

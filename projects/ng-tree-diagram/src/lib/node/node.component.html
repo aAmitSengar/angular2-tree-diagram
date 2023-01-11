@@ -25,21 +25,26 @@
     (dragover)="node.dragover($event)"
     (dragend)="node.dragend()"
     (dragleave)="node.dragleave($event)"
+
   >
-    <div
+  <!-- [style.transform]="transformation" -->
+
+  <div
       class="rect"
       [style.width.px]="node.width"
       [style.height.px]="node.height"
     >
       <div class="buttons">
-        <div class="delete" (click)="node.destroy()"></div>
-        <div class="toggler" (click)="node.toggle()"></div>
-        <div class="add" (click)="node.addChild()"></div>
+        <div class="delete" (click)="node.destroy()"><mat-icon>delete</mat-icon></div>
+        <div class="toggler" (click)="node.toggle()">
+          <!-- <mat-icon>visibility</mat-icon> -->
+        </div>
+        <div class="add" (click)="node.addChild()"><mat-icon>add_circle</mat-icon></div>
       </div>
-      <div class="tree-text tree-text-non-editable">
+      <div class="tree-text tree-text-non-editable" [style.transform]="transformation">
         <span>{{ node.displayName }}</span>
       </div>
-      <div class="tree-text tree-text-editable">
+      <div class="tree-text tree-text-editable" [style.transform]="transformation">
         <span
           contenteditable
           [innerHtml]="node.displayName"

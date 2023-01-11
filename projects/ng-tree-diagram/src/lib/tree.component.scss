@@ -5,7 +5,9 @@
   -webkit-touch-callout: none;
   user-select: none;
   overflow: hidden;
+  overflow-y: hidden;
   height: 100vh;
+  width: 100VW;
   text-align: center;
 }
 
@@ -24,18 +26,36 @@
   display: inline-block;
   margin: 15px;
   vertical-align: top;
+
   &:only-of-type {
-    > .line-to {
+    >.line-to {
       display: none;
     }
   }
 }
 
-.tree-pane,
-.tree-paning-container {
+.tree-pane {
+  // .tree-paning-container {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  margin: auto;
+  border: 1px solid red;
+  width: 90vw;
+  height: 90vh;
+}
+
+.tree-pane-hori {
+  // .tree-paning-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid red;
+  width: 95vh;
+  height: 93vw;
 }
