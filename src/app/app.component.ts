@@ -7,12 +7,10 @@ import json from './mock-data.json';
     styleUrls: [
         './app.component.css'
     ],
-    template: `
-        <tree-diagram [data]="tree"></tree-diagram>
-    `
+    templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-
+    demoNo = 1
     public treeConfig = {
         nodeWidth: 150,
         nodeHeight: 150
@@ -27,5 +25,13 @@ export class AppComponent implements OnInit {
             config: this.treeConfig
         };
     }
-
+    get demo() {
+        return this.demoNo
+    }
+    set demo(no: number) {
+        this.demoNo = no
+    }
+    public setDemo(no: number) {
+        this.demo = no
+    }
 }

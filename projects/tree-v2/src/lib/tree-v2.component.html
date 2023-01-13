@@ -1,0 +1,16 @@
+<div *ngIf="!rotating" style="display:flex; flex:1; width: 100vw; height:100vh;">
+    <div [ngClass]="{'tree-pane': keysState === 0, 'tree-pane-hori': keysState === 3}"
+        >
+        <div class="tree-paning-container">
+            <div *ngIf="nodes" class="tree-roots-elements">
+                <tree-diagram-node-v2 [keysState]="keysState" [nodeId]="node.guid" class="tree-root tree-node"
+                    (mousedown)="preventMouse($event)" *ngFor="let node of nodes.roots">
+                </tree-diagram-node-v2>
+
+                <tree-diagram-node-v2 [keysState]="keysState" [nodeId]="nodeMaker" (click)="newNode()"
+                    (mousedown)="preventMouse($event)" class="tree-root tree-new-node tree-node"></tree-diagram-node-v2>
+
+            </div>
+        </div>
+    </div>
+</div>

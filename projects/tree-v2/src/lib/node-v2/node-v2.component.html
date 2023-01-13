@@ -34,11 +34,12 @@
       [style.width.px]="node.width"
       [style.height.px]="node.height"
     >
+    <div [ngClass]="{'active': node.isExpanded }" class="toggler" (click)="node.toggle()">
+      <!-- <mat-icon>visibility</mat-icon> -->
+    </div>
       <div class="buttons">
         <div class="delete" (click)="node.destroy()"><mat-icon>delete</mat-icon></div>
-        <div class="toggler" (click)="node.toggle()">
-          <!-- <mat-icon>visibility</mat-icon> -->
-        </div>
+        
         <div class="add" (click)="node.addChild()"><mat-icon>add_circle</mat-icon></div>
       </div>
       <div class="tree-text tree-text-non-editable" [style.transform]="transformation">
@@ -60,11 +61,11 @@
     *ngIf="node.isExpanded"
   >
     <div class="tree-elements-group container">
-      <tree-diagram-node
+      <tree-diagram-node-v2
         *ngFor="let child of node.children"
         [nodeId]="child"
         class="tree-node tree-child"
-      ></tree-diagram-node>
+      ></tree-diagram-node-v2>
     </div>
   </div>
 </div>

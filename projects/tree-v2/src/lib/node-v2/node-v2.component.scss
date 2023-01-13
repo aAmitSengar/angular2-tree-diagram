@@ -1,21 +1,35 @@
 @mixin tree-button {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   border-radius: 2px;
 }
 
-
 .toggler {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -10px;
+  /* left: 0; */
+  right: -11px;
+  top: 57px;
   background: rgb(162, 250, 0);
   margin: 0 auto;
   display: none;
   z-index: 10;
   @include tree-button;
+
+  &:before {
+    content: "";
+    width: 0;
+    position: absolute;
+    height: 9px;
+    right: 0;
+    top: 8px;
+    border-bottom: 1px solid blue;
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+    transform: rotate(45deg);
+    left: -3px;
+    z-index: 0;
+  }
 }
 
 .children-count {
@@ -36,7 +50,7 @@
   }
 
   >.tree-children {
-    display: inline-block;
+    display: inline-table;
   }
 }
 
@@ -71,7 +85,7 @@
 
     .toggler {
       transform: rotateZ(-45deg);
-      background: #0095ff;
+      background: blue;
     }
   }
 
@@ -92,6 +106,10 @@
   }
 }
 
+.active {
+  display: block !important;
+}
+
 .tree-element-container {
   z-index: 100;
 }
@@ -99,29 +117,24 @@
 .tree-children {
   text-align: center;
   display: inline-block;
-  position: relative;
+  position: fixed;
+  top: 0;
+  max-height: 95vh;
+  min-height: 95vh;
+  min-width: 200px;
+  /* overflow: hidden; */
   white-space: nowrap;
   perspective: 3000px;
   perspective-origin: center bottom;
 
-  &:before {
-    content: "";
-    width: calc(50% - 1px);
-    position: absolute;
-    height: 30px;
-    left: 0;
-    top: -45px;
-    border-right: 1px solid #dadada;
-    max-width: 100%;
-    max-height: 100%;
-  }
+
 }
 
 .line-to {
   position: absolute;
-  top: -30px;
-  border-top: 1px solid #dadada;
-  width: calc(100% + 30px);
+  top: calc(-50% - 21px);
+  border-left: 1px solid blue;
+  height: calc(100% + 30px);
   display: none;
 }
 
@@ -136,16 +149,30 @@
     width: calc(50% - 1px);
     position: absolute;
     height: 30px;
-    left: 0;
-    top: -30px;
-    border-right: 1px solid #dadada;
+    left: calc(-50% + 1px);
+    top: 76px;
+    border-top: 1px solid blue;
   }
 
   &:only-of-type {
     >.line-to {
-      display: none !important;
+      display: block !important;
     }
   }
+}
+
+.container {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+.container::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 .buttons {
@@ -160,17 +187,17 @@
     @include tree-button;
     color: #a34851;
     position: absolute;
-    right: -9px;
-    top: 61px;
+    right: 14px;
+    top: 4px;
   }
 
   .add {
     @include tree-button;
     color: #256947;
     position: absolute;
-    left: -11px;
+    left: 14px;
     right: 0;
-    top: 66px;
+    top: 7px;
     bottom: 0;
 
     // &:before {
@@ -211,26 +238,33 @@
 }
 
 .tree-elements-group {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* position: fixed; */
+  max-height: 96vh;
+  top: 0;
+  overflow: hidden;
+  bottom: 0;
+  overflow-y: scroll;
 
   &>.tree-node.tree-child {
     &>.line-to {
-      left: 0;
+      left: -15px;
       display: block;
     }
 
     &:first-of-type {
       &>.line-to {
-        right: -30px;
-        width: calc(50% + 30px);
+        // top: calc(50% + 0px);
+        width: calc(50% + 0px);
         display: block;
-        left: auto;
+        left: -15px;
       }
     }
 
     &:last-of-type {
       &>.line-to {
-        left: 0;
+        left: -15px;
         right: auto;
         width: 50%;
         display: block;
@@ -254,7 +288,7 @@
 .tree-new-node {
   .rect {
     opacity: 0.5;
-    border: 1px dashed #dadada;
+    border: 1px dashed blue;
     cursor: pointer !important;
   }
 

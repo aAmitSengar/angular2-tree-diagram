@@ -35,6 +35,10 @@
       "ng-tree-diagram2": [
         "dist/ng-tree-diagram2/ng-tree-diagram2",
         "dist/ng-tree-diagram2"
+      ],
+      "tree-v2": [
+        "dist/tree-v2/tree-v2",
+        "dist/tree-v2"
       ]
     }
   },

@@ -1,0 +1,68 @@
+:host {
+  -webkit-print-color-adjust: exact;
+  // position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  user-select: none;
+  // overflow: hidden;
+  // overflow-y: hidden;
+  // height: 400px;
+  // width: 800px;
+  text-align: center;
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+.tree-roots-elements {
+  // position: relative;
+  // display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default !important;
+  font-size: 0;
+  transform-origin: center;
+  border: 1px solid orange;
+  display: grid;
+  flex-direction: column;
+  min-height: 90vh;
+  margin: auto 0 auto 17px;
+}
+
+.tree-node {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+
+  &:only-of-type {
+    >.line-to {
+      display: none;
+    }
+  }
+}
+
+.tree-pane {
+  // .tree-paning-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid red;
+  width: 90vw;
+  height: 90vh;
+}
+
+.tree-pane-hori {
+  // .tree-paning-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 1px solid red;
+  width: 95vh;
+  height: 93vw;
+}
