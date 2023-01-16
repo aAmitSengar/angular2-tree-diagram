@@ -1,0 +1,61 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-paginator-range-label {
+      display: none;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  
+  /* Border */
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgb(255, 255, 255);
+    /* background-color: white; */
+  }
+  /* Font color */
+  input.mat-input-element {
+    color: rgb(0, 0, 0);
+  }
+  
+
+  tr.detail-row {
+    height: 0;
+    }
+  
+    .element-row td {
+      border-bottom-width: 0;
+      font: normal 14px Lato!important;
+      font-weight: 400!important;
+    }
+  
+    .new-row {
+      height: 58px !important;
+    }
+  
+    .element-detail {
+      overflow: hidden;
+      display: flex;
+    }
+  .row-header {
+    padding: 16px 0 16px 16px;
+    text-align: center;
+  }
+  .sub-table {
+    border: 1px solid #000;
+    border-radius: 8px 8px;
+    width: 98%;
+    margin: 4px auto 14px;
+  }
+  .sub-heading-text {
+    font: 400 12px/16px Lato;
+  }
+  .table--div {
+    display: table-row-group;
+    width: 100%;
+  }
+  
